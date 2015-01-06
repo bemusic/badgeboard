@@ -91,6 +91,7 @@ function *getInfoFromNpm() {
   for (var i=0; i<projectsDB.length; i++) {
     var project = projectsDB[i]
     var npm = yield getNpmInfo(project.npm)
+    if (npm.error) continue
     var projectData = data.projects[project.name]
     projectData.description = npm.description
     projectData.maintainer =

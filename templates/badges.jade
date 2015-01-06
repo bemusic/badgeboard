@@ -22,9 +22,13 @@ mixin badge-travis(repo)
   a(href='https://travis-ci.org/' + repo)
     +badge('/travis/' + repo)
 
+mixin badge-climate(repo)
+  a(href='https://codeclimate.com/github/' + repo)
+    +badge('/codeclimate/github/' + repo)
+
 mixin badge-coverage(repo)
-  a(href='https://coveralls.io/r/' + repo)
-    +badge('/coveralls/' + repo)
+  a(href='https://codeclimate.com/github/' + repo + '/code?sort=covered_percent&sort_direction=desc')
+    +badge('/codeclimate/coverage/github/' + repo)
 
 mixin badge-downloads(npm)
   a(href='https://npmjs.org/package/' + npm)
